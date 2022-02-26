@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{{STATIC_URL}}/css/styles.css" />
+    <link type="text/css" rel="stylesheet" href="{{STATIC_URL}}/css/magnific-popup.css" />
+    <link type="text/css" rel="stylesheet" href="{{STATIC_URL}}/css/dpSocialTimeline.css" />
+
+    <script type="text/javascript" src="{{STATIC_URL}}/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/js/jquery.dpSocialTimeline.js"></script>
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+
+        var dataURL = "{% url 'DigitalMarketing.views.searchTweets' %}"
+
+
+		$('#socialTimeline').dpSocialTimeline({
+			feeds:
+
+			{
+				'twitter_hash': {data: dataURL, limit: 10}
+
+			},
+
+			timelineItemWidth: '300px',
+			columnsItemWidth: '200px',
+			oneColumnItemWidth: '98%',
+			skin: 'light',
+			share: true,
+			addLightbox: true,
+			total: 20
+		});
+
+	});
+    </script>
+
+{% endblock %}
+{% block content %}
+    <!-- TWITTER -->
+					<div id="content">
+						<h1>Social Competitive Lanscape</h1>
+
+						<div id="socialTimeline" style="width:100%;"></div>
+					</div>
+
+
+                    <!-- END OF TWITTER -->
+{% endblock %}
