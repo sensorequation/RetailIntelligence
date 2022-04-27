@@ -44,24 +44,18 @@ def store_data():
     today = str(date.today())
 
     json_dump_first_products = json.dumps(fetch_data_first_products())
-    with open("data/walmart/walmart_fruits/"+today+".json", "w") as outfile:
+    with open("data/walmart/walmart_fruits/"+today+"_fp"+".json", "w") as outfile:
         outfile.write(json_dump_first_products)
 
     json_dump_products = json.dumps(fetch_data_product())
-    with open("data/walmart/walmart_fruits/"+today+".json", "a") as outfile:
+    with open("data/walmart/walmart_fruits/"+today+"_product"+".json", "w") as outfile:
         outfile.write(json_dump_products)
 
     json_dump_price = json.dumps(fetch_data_price())
-    with open("data/walmart/walmart_fruits/"+today+".json", "a") as outfile:
+    with open("data/walmart/walmart_fruits/"+today+"_price"+".json", "w") as outfile:
         outfile.write(json_dump_price)
 
     print('### '+today+'- All Data Stored ###')
 
 
 store_data()
-
-'''
-data = Dict(response.json())
-price = json_extract(data, 'currentPrice')
-print(price)
-'''
