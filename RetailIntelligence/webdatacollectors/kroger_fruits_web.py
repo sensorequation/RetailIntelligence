@@ -66,27 +66,26 @@ def store_data():
     today = str(date.today())
 
     json_dump_first_page = json.dumps(fetch_data_page1())
-    with open("data/kroger/kroger_fruits/"+today+".json", "w") as outfile:
+    with open("data/kroger/kroger_fruits/"+today+"_1"+".json", "w") as outfile:
         outfile.write(json_dump_first_page)
 
     json_dump_second_page = json.dumps(fetch_data_page2())
-    with open("data/kroger/kroger_fruits/"+today+".json", "a") as outfile:
+    with open("data/kroger/kroger_fruits/"+today+"_2"+".json", "w") as outfile:
         outfile.write(json_dump_second_page)
 
     json_dump_third_page = json.dumps(fetch_data_page3())
-    with open("data/kroger/kroger_fruits/"+today+".json", "a") as outfile:
+    with open("data/kroger/kroger_fruits/"+today+"_3"+".json", "w") as outfile:
         outfile.write(json_dump_third_page)
 
     json_dump_forth_page = json.dumps(fetch_data_page4())
-    with open("data/kroger/kroger_fruits/"+today+".json", "a") as outfile:
+    with open("data/kroger/kroger_fruits/"+today+"_4"+".json", "w") as outfile:
         outfile.write(json_dump_forth_page)
 
     json_dump_fifth_page = json.dumps(fetch_data_page5())
-    with open("data/kroger/kroger_fruits/"+today+".json", "a") as outfile:
+    with open("data/kroger/kroger_fruits/"+today+"_5"+".json", "w") as outfile:
         outfile.write(json_dump_fifth_page)
 
     print('### '+today+'- All Data Stored ###')
 
 
 store_data()
-
