@@ -1,7 +1,7 @@
 import json
 import requests
 from extract import json_extract
-#from addict import Dict
+from addict import Dict
 from datetime import date
 
 
@@ -45,8 +45,9 @@ for i in range(0, 6):
     def store_data():
 
         today = str(date.today())
+        page_number = str(i+1)
         json_dump = json.dumps(fetch_data())
-        with open("data/meijer/meijer_fruits/" + today + ".json", "a") as outfile:
+        with open("data/meijer/meijer_fruits/" + today + "_" + page_number + ".json", "w") as outfile:
             outfile.write(json_dump)
 
 
@@ -54,7 +55,3 @@ for i in range(0, 6):
 
 date = str(date.today())
 print('### ' + date + '- All Data Stored ###')
-
-
-
-
